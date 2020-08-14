@@ -11,14 +11,28 @@
 </head>
 
 <body>
-    <div id="container">
+    <section id="first-container">
+        <h1 class="title">Welcome to Videos</h1>
         <video id="background_video" loop muted></video>
         <div id="video_cover"></div>
 
-        <div id="footer">
+        <div class="login-panel">
+            <img src="/logo.png" />
+            <!-- <a href="https://icons8.com/icon/FftpbGIwS6M1/video">Video icon by Icons8</a> -->
+            <h4 class="welcome">Welcome! Please log in!</h4>
+            <form method='POST' class="" onsubmit="return validate();">
+                <input type="text" name="username" placeholder="Username" class="">
+                <input type="password" name="password" placeholder="Password" class="">
+                <button type="submit" class="btn in">Log In</button>
+            </form>
+            <!-- add social media icons-->
+            <div class="social-login-panel"></div>
+        </div>
+
+        <div id="comment">
             <a href="http://videezy.com/">Additional Stock Footage Provided By Videezy!</a>
         </div>
-    </div>
+    </section>
 
     <script src="bideo.js"></script>
     <script src="app.js"></script>
