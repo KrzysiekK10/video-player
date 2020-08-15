@@ -1,25 +1,28 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html,
 body {
+    font-family: 'Lato', sans-serif;
+    color: #1974e0;
+}
+
+#first-container {
     width: 100%;
     height: 100%;
     background: url('nature.jpg') no-repeat;
     background-size: cover;
     background-position: center;
-    color: #104555;
-}
-
-#first-container {
     overflow: hidden;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    font-size: 1.2em;
 
     #background_video {
         position: absolute;
@@ -42,8 +45,7 @@ body {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 500px;
-        height: 50%;
+        width: 420px;
         text-align: center;
         background: white;
         border: 2px solid white;
@@ -52,45 +54,119 @@ body {
         opacity: .9;
 
         img {
-            margin: 1em;
+            margin: .5em;
         }
 
         .welcome {
-            margin-bottom: 2vh;
+            margin-bottom: 1vh;
         }
 
         input {
-            margin: 1em 2em;
+            margin: .5em;
             width: 60%;
-            height: 30px;
-            color: #104555;
+            height: 35px;
+            color: #1974e0;
             padding: .2em .5em;
         }
 
         input[type="text"]:focus,
         input[type="password"]:focus {
-            border-color: #104555;
+            background: rgb(243, 241, 241);
+            border-color: #1974e0;
             transition: .5s;
+        }
+
+        .switch {
+            $off: gray;
+            $on: #1974e0;
+            $dot: white;
+            font-size: .7em;
+
+            input {
+                width: 0;
+                height: 0;
+                margin: 0 0 1em;
+                border: none;
+            }
+
+            label {
+                user-select: none;
+                position: relative;
+                padding-left: 2.5em;
+                height: 1em;
+                display: inline-flex;
+                align-items: center;
+                cursor: pointer;
+
+                &:before,
+                &:after {
+                    content: "";
+                    display: inline-block;
+                    position: absolute;
+                    transition-duration: .2s;
+                }
+
+                &:before {
+                    left: 0;
+                    width: 2em;
+                    height: 1em;
+                    background-color: $off;
+                    border-radius: 1em;
+                }
+
+                &:after {
+                    left: .15em;
+                    width: .7em;
+                    height: .7em;
+                    background-color: $dot;
+                    border-radius: 50%;
+                }
+            }
+
+            input[type="checkbox"]:checked+label {
+                &:before {
+                    background-color: $on;
+                }
+
+                &:after {
+                    left: 1.15em;
+                }
+            }
         }
 
         .in {
             width: 33%;
-            height: 50px;
+            height: 45px;
             margin: 1em;
-            font-weight: 400;
             border: none;
             outline: none;
             border-radius: 30px;
-            background: #104555;
+            background: #1974e0;
             color: #fff;
-            padding: 1.5em;
+            padding: 1em;
             transition: .5s;
             cursor: pointer;
         }
 
         .in:hover {
             background: #105555;
-            color: #000;
+            width: 40%;
+        }
+
+        .social-login-panel {
+            background-color: rgb(243, 241, 241);
+            font-size: 1.2em;
+            display: flex;
+            justify-content: space-around;
+
+            img {
+                margin-top: 3vh;
+                transition: .5s;
+            }
+
+            img:hover {
+                transform: scale(1.2);
+            }
         }
     }
 
@@ -98,8 +174,6 @@ body {
         position: absolute;
         bottom: 0;
         right: 0;
-        display: flex;
-        flex-direction: column;
 
         a {
             color: rgba(255, 255, 255, 0.5);

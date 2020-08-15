@@ -6,27 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="author" content="Krzysztof Kerlin">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>video player</title>
 </head>
 
 <body>
     <section id="first-container">
-        <h1 class="title">Welcome to Videos</h1>
         <video id="background_video" loop muted></video>
         <div id="video_cover"></div>
 
         <div class="login-panel">
-            <img src="/logo.png" />
-            <!-- <a href="https://icons8.com/icon/FftpbGIwS6M1/video">Video icon by Icons8</a> -->
-            <h4 class="welcome">Welcome! Please log in!</h4>
+            <a href="/index.html"><img src="/img/logo.png" alt="logo" /></a>
+            <h4 class="welcome">Welcome to VIDEOS!</h4>
             <form method='POST' class="" onsubmit="return validate();">
                 <input type="text" name="username" placeholder="Username" class="">
                 <input type="password" name="password" placeholder="Password" class="">
-                <button type="submit" class="btn in">Log In</button>
+                <button type="submit" class="btn in">Login</button>
             </form>
-            <!-- add social media icons-->
-            <div class="social-login-panel"></div>
+            <span class="switch">
+                <input type="checkbox" id="check" name="checkbox"><label for="check">Remember me?</label>
+            </span>
+            <p class="or">or use:</p>
+            <hr class="line">
+            <div class="social-login-panel">
+                <a href="https://facebook.com/"><img src="./img/facebook.png" alt="facebook"></a>
+                <a href="https://myaccount.google.com/"><img src="./img/google-plus.png" alt="google"></a>
+                <a href="https://github.com/"><img src="./img/github.png" alt="github"></a>
+            </div>
         </div>
 
         <div id="comment">
